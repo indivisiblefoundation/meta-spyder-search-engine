@@ -1,0 +1,48 @@
+# Web Crawler (Spider)
+
+# Scrapy is a powerful and scalable web-crawling framework.
+Scrapy==2.11.0
+# If you need to handle JavaScript-heavy websites, Playwright or Selenium can be used for browser automation.
+# Playwright is a more modern alternative and is often easier to use asynchronously.
+playwright==1.45.0
+# Or, if you prefer Selenium (note: resource-intensive).
+# selenium==4.22.0
+# For flexibility and optimized features use django
+Django==5.2.8
+Uvicorn==0.30.1
+
+# Indexer and Database
+
+# Elasticsearch is a popular search database for fast and relevant search queries.
+elasticsearch==8.14.0
+# Pydantic is useful for data validation, especially when integrating with FastAPI.
+pydantic==2.8.2
+# Meta-Search Aggregator (and general-purpose requests)
+uvicorn==0.30.1
+# The requests library is a standard for making HTTP requests.
+requests==2.32.3
+
+# Search Interface (Backend API)
+
+# FastAPI is a high-performance web framework for building APIs.
+fastapi==0.111.1
+# Uvicorn is a lightning-fast ASGI web server for running your FastAPI application.
+uvicorn==0.30.1
+# API layer connecting DB and Indexer
+Django==5.2.8
+
+# General Utilities
+
+# Python-decouple helps manage environment variables, like API keys.
+python-decouple==3.8
+# Asynchronous Operations
+# Aiohttp is a library for asynchronous HTTP requests.
+aiohttp==3.9.5
+# Additional Packages (Optional but Recommended)
+# If you need to parse complex HTML documents manually.
+beautifulsoup4==4.12.3
+# If you are using Redis for caching frequently accessed data.
+redis==5.0.7
+# The web framework can be effective when used in the backend to implement numerous features that significantely improve searh engine optimization.
+Django==5.2.8
+Uvicorn==0.30.1

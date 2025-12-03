@@ -1,0 +1,6 @@
+├── docker-compose.yaml
+├── Dockerfile          <-- Dockerfile is here
+├── src/                <-- Source code and project files are here
+│   ├── app.py
+│   └── ...
+└── requirements.txt

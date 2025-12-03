@@ -1,0 +1,56 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.14.0
+    container_name: elasticsearch
+    environment:
+      # These environment variables configure Elasticsearch for development
+      # For production, more advanced configuration is needed
+      discovery.type: single-node
+      xpack.security.enabled: false
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl --silent --fail localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web-interface:
+    # Assumes a Dockerfile is in the current directory (context: .)
+    build:
+      context: .
+      dockerfile: Dockerfile.web # Assuming you name it specifically
+    container_name: web-interface
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - ./app:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+
+  web-crawler:
+    # Assumes a separate Dockerfile for the crawler in the current directory
+    build:
+      context: .
+      dockerfile: Dockerfile.crawler # Assuming you name it specifically
+    container_name: web-crawler
+    # Command keeps the container alive but idle
+    command: sleep infinity
+    volumes:
+      - ./app:/app # Mount the app code so the scraper can run within the same source context
+    env_file:
+      - .env
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+
+volumes:
+  elasticsearch-data:

@@ -1,0 +1,12 @@
+meta-spyder-search-engine/
+├── app/                   # FastAPI web interface
+│   ├── __init__.py
+│   └── main.py
+├── web_crawler/           # Scrapy spiders
+│   ├── __init__.py
+│   ├── spiders/
+│   └── scrapy.cfg
+├── Dockerfile             # Defines your Docker images
+├── docker-compose.yml     # Defines your multi-container application
+├── requirements.txt       # Lists all Python dependencies
+└── .gitignore             # Git ignore file
