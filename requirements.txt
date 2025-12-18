@@ -37,7 +37,7 @@ Django==5.2.8
 python-decouple==3.8
 # Asynchronous Operations
 # Aiohttp is a library for asynchronous HTTP requests.
-aiohttp==3.9.5
+aiohttp==3.12.14
 # Additional Packages (Optional but Recommended)
 # If you need to parse complex HTML documents manually.
 beautifulsoup4==4.12.3
