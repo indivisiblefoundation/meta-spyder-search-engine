@@ -1,7 +1,7 @@
 # Web Crawler (Spider)
 
 # Scrapy is a powerful and scalable web-crawling framework.
-Scrapy==2.11.0
+Scrapy==2.13.4
 # If you need to handle JavaScript-heavy websites, Playwright or Selenium can be used for browser automation.
 # Playwright is a more modern alternative and is often easier to use asynchronously.
 playwright==1.45.0
