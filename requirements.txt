@@ -33,5 +33,5 @@ typing_extensions==4.15.0
 urllib3_secure_extra==0.1.0
 xmlrpclib==1.0.1
 # The web framework can be effective when used in the backend to implement numerous features that significantely improve searh engine optimization.
-Django==5.2.8
+Django==5.2.9
 Uvicorn==0.30.1
