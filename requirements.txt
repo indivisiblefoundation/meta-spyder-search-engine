@@ -8,7 +8,7 @@ cryptography==46.0.3
 docutils==0.22.4
 elasticsearch==9.2.1
 fastapi==0.127.0
-filelock==3.20.1
+filelock==3.20.3
 h2==4.3.0
 HTMLParser==0.0.2
 ipython==9.8.0
