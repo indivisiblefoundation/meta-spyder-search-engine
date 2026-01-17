@@ -7,7 +7,7 @@ class BasicSpider(scrapy.Spider):
     name = "basic_spider"
     start_urls = [
         "quotes.toscrape.com", # Example site
-        # Add your own starting URLs here
+        # https://duckduckgo.com, https://dogpile.com, https://surfwax.com, https://search.com, http://bravesearch.com, https://metacrawler.com, https://ixquick.com, https://clusty.com
     ]
 
     def parse(self, response):

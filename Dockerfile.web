@@ -1,0 +1,25 @@
+# Use a full, non-slim Debian image which has correct library configurations
+FROM python:3.13-bookworm 
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Install ALL system-level dependencies required for the project
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential pkg-config cmake libkrb5-dev default-jdk default-libmysqlclient-dev \
+    libgirepository1.0-dev python3-dev libgtk-3-dev libgstreamer1.0-dev libwebkit2gtk-4.1-dev libsdl2-dev libnotify-dev libpng-dev libjpeg-dev libtiff-dev libxtst-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# --- REMOVE all manual PKG_CONFIG_PATH fixes and link commands from previous attempts ---
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install the Python dependencies (inside a virtual environment)
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+# This command should succeed now on the fuller base image
+RUN pip install --no-cache-dir --no-build-isolation -r requirements.txt
+
