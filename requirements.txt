@@ -58,7 +58,7 @@ path.py==12.5.0
 Pillow==12.1.1
 pkg1==0.0.3
 priority==2.0.0
-protobuf==6.33.4
+protobuf==6.33.5
 psycopg==3.3.2
 ptpython==3.0.32
 pyarrow==20.0.0
