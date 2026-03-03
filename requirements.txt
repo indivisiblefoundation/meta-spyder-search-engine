@@ -45,7 +45,7 @@ js
 jsonpointer==3.0.0
 keyring==25.7.0
 lint
-lxml_html_clean==0.4.3
+lxml_html_clean==0.4.4
 mock==5.2.0
 mod==0.3.0
 multipart==1.3.0
