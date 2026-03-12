@@ -48,7 +48,7 @@ lint
 lxml_html_clean==0.4.3
 mock==5.2.0
 mod==0.3.0
-multipart==1.3.0
+multipart==1.3.1
 mypackage==0.1
 mysqlclient
 orjson==3.11.5
