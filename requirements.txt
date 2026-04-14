@@ -67,7 +67,7 @@ PyHamcrest==2.1.0
 pyperf==2.9.0
 psycopg2-binary
 pyserial==3.5
-pytest==9.0.2
+pytest==9.0.3
 python_multipart==0.0.22
 pythran==0.18.1
 pyui==0.1.0
