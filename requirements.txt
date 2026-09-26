@@ -30,7 +30,7 @@ graphviz==0.21
 gssapi==1.10.1
 h2==4.4.1
 hatchling==1.28.0
-hpack==4.1.0
+hpack==4.2.0
 html5lib==1.1
 HTMLParser==0.0.2
 httpx==0.28.1
